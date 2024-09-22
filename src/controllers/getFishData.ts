@@ -157,7 +157,7 @@ export default function getFishData():fishType[]{
             },
             {
                 name: "Bluegill",
-                isCaught: true,
+                isCaught: false,
                 imgSrc: "./img/fish/bluegill.png",
                 id: 26
             },
@@ -175,7 +175,7 @@ export default function getFishData():fishType[]{
             },
             {
                 name: "Readear Sunfish",
-                isCaught: true,
+                isCaught: false,
                 imgSrc: "./img/fish/redear.png",
                 id: 29
             },
@@ -241,7 +241,7 @@ export default function getFishData():fishType[]{
             },
             {
                 name: "Freshwater Drum",
-                isCaught: true,
+                isCaught: false,
                 imgSrc: "./img/fish/fd.png",
                 id: 40
             },
