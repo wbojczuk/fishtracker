@@ -10,7 +10,7 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any})
   const fishCards = displayFish.map((data: fishType)=>{
     return(
       <div className="fish-card">
-        <img className="status-icon" src={(data.isCaught) ? "/img/complete.svg" : "/img/incomplete.svg"}/>
+        <img className="status-icon" src={(data.isCaught) ? "./img/complete.svg" : "./img/incomplete.svg"}/>
         <img src={data.imgSrc} aria-hidden className="fish-img" />
         <h3>{data.name}</h3>
         
