@@ -12,7 +12,7 @@ export default function Header(props: {fishData: fishType[]}) {
             <RandomFish fishData={props.fishData} />
         </div>
     
-        <img src='./img/header-bg.png' alt='Image of Fish' className='bg-img' />
+        <img src='./img/header-bg.webp' alt='Image of Fish' className='bg-img' />
         <div className='shader'></div>
     </header>
   )
