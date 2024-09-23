@@ -174,7 +174,7 @@ export default function getFishData():fishType[]{
                 id: 28
             },
             {
-                name: "Readear Sunfish",
+                name: "Redear Sunfish",
                 isCaught: false,
                 imgSrc: "./img/fish/redear.webp",
                 id: 29
