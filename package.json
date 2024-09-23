@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update": "echo 'Enter Commit Message:' && read msg && git checkout main && git add -A && git commit -m \"$msg\" && git push origin main"
   },
   "dependencies": {
     "gsap": "^3.12.5",

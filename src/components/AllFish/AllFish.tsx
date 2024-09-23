@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./allfish.css"
 import saveFishData from '../../controllers/saveFishData'
+import Filter from '../Filter/Filter'
 
 export default function AllFish(props: {fishData: fishType[], setFishData: any}) {
   const [displayFish, setDisplayFish] = useState(props.fishData)
+  const [filteredFish, setFilteredFish] = useState(props.fishData)
   const [selectedFilter, setSelectedFilter] = useState(1)
 
 
-  const fishCards = displayFish.map((data: fishType)=>{
+  const fishCards = filteredFish.map((data: fishType)=>{
     return(
       <div className="fish-card">
         <img className="status-icon" src={(data.isCaught) ? "./img/complete.svg" : "./img/incomplete.svg"}/>
@@ -38,7 +40,6 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any})
       setDisplayFish(props.fishData)
 
     }else if(selectedFilter == 1){
-
       setDisplayFish((old)=>{
         return props.fishData.filter((data)=>{
           return (!data.isCaught == true)
@@ -63,6 +64,8 @@ export default function AllFish(props: {fishData: fishType[], setFishData: any})
         <div onClick={()=>{setSelectedFilter(1)}} className={`filter ${(selectedFilter == 1) ? "active" : ""}`}>To-Catch</div>
         <div onClick={()=>{setSelectedFilter(2)}} className={`filter ${(selectedFilter == 2) ? "active" : ""}`}>Completed</div>
           <div onClick={()=>{setSelectedFilter(0)}} className={`filter ${(selectedFilter == 0) ? "active" : ""}`}>All Fish</div>
+
+          <Filter setFilteredFish={setFilteredFish} displayFish={displayFish} />
           
           
         </div>
