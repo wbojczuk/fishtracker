@@ -9,10 +9,13 @@ export default function Filter(props:{setFilteredFish: any, displayFish: fishTyp
     useEffect(()=>{
         const text = (currentVal).trim()
         if(text !== ""){
-            const regEx = new RegExp(`${text}`, "gi")
+            const regEx = new RegExp(`.${text}.`, "i")
             const newFish = props.displayFish.filter((data)=>{
-                return(regEx.test(data.name))
+                return(regEx.test(data.name) == true)
+                
             })
+
+            console.log(newFish)
 
             props.setFilteredFish(newFish)
         }else{
